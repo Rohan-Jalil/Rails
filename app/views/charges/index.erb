@@ -1,0 +1,46 @@
+<div>
+  <h1>
+    Failed Charges</h1>
+  <ul>
+    <% for failed_charge in @failed_charges %>
+      <li>
+        <span style="background-color: #FF0000">
+          Name: <%= failed_charge.customer.first_name + " " + failed_charge.customer.last_name %>,
+          Charge Amount: <%=  failed_charge.amount.to_s + " " + failed_charge.currency%>, 
+          Date: <%= failed_charge.created_at.strftime("%m/%d/%Y") %>
+        </span>
+      </li>
+  
+    <%  end %>
+  </ul>
+</div>
+<div>
+  <h1>
+    Disputed Charges</h1>
+  <ul>
+    <% for disputed_charge in @disputed_charges %>
+      <li>
+        <span style="background-color: #FF5400">
+          Name: <%= disputed_charge.customer.first_name + " " + disputed_charge.customer.last_name %>,
+          Charge Amount: <%=  disputed_charge.amount.to_s + " " + disputed_charge.currency%>, 
+          Date: <%= disputed_charge.created_at.strftime("%m/%d/%Y") %>
+        </span>
+      </li>
+  
+    <%  end %>
+  </ul>
+</div>
+<div>
+  <h1>
+    Successful Charges</h1>
+  <ul>
+    <% for successful_charge in @successful_charges %>
+      <li>
+          Name: <%= successful_charge.customer.first_name + " " + successful_charge.customer.last_name %>,
+          Charge Amount: <%=  successful_charge.amount.to_s + " " + successful_charge.currency%>, 
+          Date: <%= successful_charge.created_at.strftime("%m/%d/%Y")  %>
+      </li>
+  
+    <%  end %>
+  </ul>
+</div>
